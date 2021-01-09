@@ -1,0 +1,27 @@
+{
+  "name": "wpstarter",
+  "version": "0.1.0",
+  "description": "Wordpress starter theme",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo hi",
+    "git:fast": "git add . && git commit -m fast && git push",
+    "sass": "node-sass assets/src/scss/app.scss assets/dist/css/app.css -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivankanat/wpstarter.git"
+  },
+  "keywords": [],
+  "author": "sw",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/sivankanat/wpstarter/issues"
+  },
+  "homepage": "https://github.com/sivankanat/wpstarter#readme"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "homeusr/wpstarter",
+    "description": "Wordpress starter theme",
+    "type": "project",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "sivankanat",
+            "email": "sivankanat@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+            "app"
+        ]
+    }
+}

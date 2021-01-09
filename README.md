@@ -1,0 +1,2 @@
+# wpstarter
+Wordpress starter theme
