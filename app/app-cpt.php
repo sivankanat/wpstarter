@@ -153,11 +153,12 @@ class App_Cpt extends App
      */
     public function create_meta_box()
     {
+        $post_types = array('post_type_slug1', 'post_type_slug2');
         return add_meta_box(
             'custom_fields_meta_box',
             'Custom Fields',
             array($this, 'render_meta_box'),
-            'post_type_slug', //post type slug
+            $post_types,
             'advanced',
             'high'
         );
@@ -165,9 +166,13 @@ class App_Cpt extends App
     public function render_meta_box()
     {
         global $post;
-        $meta  = ($x = get_post_meta($post->ID, 'custom_fields', true)) ? $x : [];
+        /* $meta  = ($x = get_post_meta($post->ID, 'custom_fields', true)) ? $x : []; */
         $nonce = wp_create_nonce(basename(__FILE__));
-        include $this->renderDir . 'table.php';
+        echo '<input type="hidden" name="custom_fields_nonce" value="' . $nonce . '">';
+        $the_post_type = $post->post_type; /* get the post type */
+
+        /* create post type folder in the dir */
+        include ADMINDIR . '/render//' . $the_post_type . '/table.php';
     }
 
     public function save_custom_fields($post_id)
@@ -175,6 +180,10 @@ class App_Cpt extends App
         if (isset($_POST['custom_fields'])):
 
             if (!wp_verify_nonce($_POST['custom_fields_nonce'], basename(__FILE__))):
+                return $post_id;
+            endif;
+
+            if (!current_user_can('edit_post', $post_id)):
                 return $post_id;
             endif;
 

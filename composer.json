@@ -2,7 +2,7 @@
     "name": "homeusr/wpstarter",
     "description": "Wordpress starter theme",
     "type": "project",
-    "license": "GNU",
+    "license": "MIT",
     "authors": [
         {
             "name": "sivankanat",

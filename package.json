@@ -1,6 +1,6 @@
 {
   "name": "wpstarter",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Wordpress starter theme",
   "main": "index.js",
   "private": true,
@@ -19,7 +19,7 @@
   },
   "keywords": [],
   "author": "sw",
-  "license": "GNU",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sivankanat/wpstarter/issues"
   },
